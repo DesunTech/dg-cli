@@ -1,8 +1,8 @@
 # A simple cli to create and manage github repo and colab
 
 ## Features
-    - Create an github repo with a single command
-    - Add multiple user as colab at once
+    Create an github repo with a single command
+    Add multiple user as colab at once
 
 ## Installation
     Make sure you have php and composer installed in your system
