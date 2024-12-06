@@ -1,8 +1,10 @@
-# A simple cli to create and manage github repo and colab
+# A Simple CLI to Create and Manage GitHub Repositories and Collaborators
 
 ## Features
-    Create an github repo with a single command
-    Add multiple user as colab at once
+    Create a GitHub repository with a single command.
+    Add multiple collaborators to a repository at once.
+    Remove collaborators from a repository (single or multiple).
+    Search repositories by name (case-insensitive, supports special characters).
 
 ## Installation
     Make sure you have php and composer installed in your system
@@ -22,9 +24,12 @@ composer install
 ## Usage
 
 ```sh
-php dg.php --cr <repo-name>                                 Create a new repository
-php dg.php --ac <repo-name> <username>                      Add single collaborator to a repository
-php dg.php --ac <repo-name> <username1, username2, ..>      Add multiple collaborator to a repository
-php dg.php --help                                           Show this help message
-php dg.php --set-access-token                               Set the access token
+php dg.php --set-access-token                                      Set the GitHub access token
+php dg.php --cr <repo-name> --d <description> --p <true/false>     Create a new repository (Optional: --d for description, --p for private/public)
+php dg.php --ac <repo-name> <username>                             Add a single collaborator to a repository
+php dg.php --ac <repo-name> <username1,username2,...>              Add multiple collaborators to a repository
+php dg.php --rc <repo-name> <username>                             Remove a single collaborator from a repository
+php dg.php --rc <repo-name> <username1,username2,...>              Remove multiple collaborators from a repository
+php dg.php --s <search-query>                                      Search repositories by name (case-insensitive, supports special characters)
+php dg.php --help                                                  Show this help message
 ```

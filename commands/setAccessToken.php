@@ -12,7 +12,7 @@ return function ($args) {
         'token' => $accessToken
     ];
 
-    file_put_contents(__DIR__ . '/access_token.json', json_encode($data, JSON_PRETTY_PRINT));
+    file_put_contents(dirname(__DIR__) . '/access_token.json', json_encode($data, JSON_PRETTY_PRINT));
 
     echo 'Access token set successfully!';
 };

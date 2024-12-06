@@ -14,7 +14,7 @@ return function ($args) {
 
     $searchQuery = $args[1] ?? null;
 
-    $cacheFile = __DIR__ . '/repo_cache.json';
+    $cacheFile = dirname(__DIR__) . '/repo_cache.json';
     $apiCount = getRepoCountFromAPI($username, $token);
 
     $repoNames = getCacheData($cacheFile);
