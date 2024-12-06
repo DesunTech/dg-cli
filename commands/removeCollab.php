@@ -31,18 +31,12 @@ return function ($args) {
         $username = trim($username);
 
         $endpoint = "repos/$githubUsername/$repoName/collaborators/$username";
+        $result = makeGitHubRequest('DELETE', $endpoint, $_ENV['GITHUB_ACCESS_TOKEN']);
 
-        $result = makeGitHubRequest('PUT', $endpoint, $_ENV['GITHUB_ACCESS_TOKEN']);
-
-        if ($result['httpCode'] === 201 || $result['httpCode'] === 204) {
-            $successMessage .= "Collaborator '$username' added to repository '$repoName'!\n";
+        if ($result['httpCode'] === 204) {
+            $successMessage .= "Collaborator '$username' removed from repository '$repoName'!\n";
         } else {
-            $errorMessage .= "Error adding collaborator '$username': " .
-                $result['response']['message'] .
-                (isset($result['response']['errors'][0]['message'])
-                    ? ", " . $result['response']['errors'][0]['message']
-                    : "") .
-                "\n";
+            $errorMessage .= "Error removing collaborator '$username': " . $result['response']['message'] . "\n";
         }
     }
 
