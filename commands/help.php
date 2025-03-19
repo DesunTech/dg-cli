@@ -9,5 +9,6 @@ return function () {
     echo "  php dg.php --rc <repo-name> <username>                              Remove a single collaborator from a repository\n";
     echo "  php dg.php --rc <repo-name> <username1,username2,...>               Remove multiple collaborators from a repository\n";
     echo "  php dg.php --s <search-query>                                       Search repositories by name (case-insensitive, supports special characters)\n";
+    echo "  php dg.php --dr <repo_name> <owner>                                 Delete a rep[ository\n";
     echo "  php dg.php --help                                                   Show this help message\n";
 };

@@ -13,6 +13,7 @@ $commands = [
     '--s' => require __DIR__ . '/commands/searchRepo.php',
     '--help' => require __DIR__ . '/commands/help.php',
     '--set-access-token' => require __DIR__ . '/commands/setAccessToken.php',
+    '--dr' => require __DIR__ . '/commands/deleteRepo.php',
 ];
 
 $args = $argv;
@@ -51,6 +52,9 @@ switch ($command) {
         }
 
         $commands['--cr']([$repoName, $description, $isPrivate]);
+        break;
+    case '--dr':
+        $commands['--dr']($args);
         break;
     default:
         $commands[$command]($args);
